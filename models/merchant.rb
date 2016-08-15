@@ -19,7 +19,7 @@ class Merchant
 
   def initialize(options)
     # Create new instance of Merhant class, passing in hash 
-    @id = options['id']
+    @id = options['id'].to_i
     @name = options['name']
   end
 

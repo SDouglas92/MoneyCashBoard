@@ -20,6 +20,16 @@ class Analysis
     return total
   end
 
+  def total_by_merchant(merchant)
+    transactions = merchant.transactions
+    total = 0
+    for transaction in transactions
+      total += transaction.amount
+    end
+    return total
+
+  end
+
 
 
 end

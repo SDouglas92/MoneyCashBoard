@@ -28,8 +28,11 @@ class AnalysisTest < MiniTest::Test
   end
 
   def test_total_amount_spent
-    assert_equal(30, @analysis.total())
+    assert_equal(30, @analysis.total_all_transactions())
+  end
 
+  def test_total_by_merchant
+    assert_equal(10, @analysis.total_by_merchant(@merchant1))
   end
 
 

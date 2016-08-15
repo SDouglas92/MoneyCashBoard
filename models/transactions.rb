@@ -25,9 +25,9 @@ class Transaction
 
   def initialize(options)
     # Creates new instances of transactions, takes in hash of options
-    @id = options['id']
-    @amount = options['amount']
-    @merchant_id = options['merchant_id']
+    @id = options['id'].to_i
+    @amount = options['amount'].to_i
+    @merchant_id = options['merchant_id'].to_i
     @tag = options['tag']
   end 
 
