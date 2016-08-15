@@ -8,7 +8,7 @@ CREATE TABLE merchants(
 
 CREATE TABLE transactions(
   id SERIAL8 PRIMARY KEY,
-  amount INT2,
+  amount FLOAT,
   merchant_id INT8 REFERENCES merchants(id),
   tag VARCHAR(255)
 );

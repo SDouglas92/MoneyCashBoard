@@ -33,7 +33,7 @@ class Transaction
 
   def save
     # Saves instance to database
-    sql = "INSERT INTO transactions (amount, merchant_id, tag) VALUES ('#{@amount}', '#{@merchant_id}', #{@tag}) RETURNING *"
+    sql = "INSERT INTO transactions (amount, merchant_id, tag) VALUES ('#{@amount.to_f}', '#{@merchant_id}', '#{@tag}') RETURNING *"
     trans = SqlRunner.run(sql).first
     @id = trans['id']
   end
