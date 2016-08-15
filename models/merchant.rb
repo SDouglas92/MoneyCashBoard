@@ -13,6 +13,7 @@ class Merchant
    # find merchant by id  
    sql = "SELECT * FROM merchants WHERE id = #{id}"
    merchant = SqlRunner.run(sql).first
+   return result = Merchant.new(merchant)
   end
 
   attr_reader(:id, :name)

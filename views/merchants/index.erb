@@ -4,5 +4,6 @@
 
   <% for merchant in @merchants %>
     <p><%= merchant.name %></p>
+    <a href="/merchants/<%=merchant.id%>">View</a>
     <hr>
   <% end %>

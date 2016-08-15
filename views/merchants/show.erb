@@ -1,0 +1,10 @@
+<h1><%= @merchant.name %></h1>
+
+<b>Transactions at this merchant</b>
+  <% trans = @merchant.transactions %>
+  <% for tran in trans %>
+    <p>Amount: <%= tran.amount %></p>
+    <p>on <%= tran.tag %></p>
+    <hr>
+  <% end %>
+  
