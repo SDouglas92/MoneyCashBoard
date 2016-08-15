@@ -1,9 +1,11 @@
 require_relative('../models/transactions.rb')
 require_relative('../models/merchant.rb')
+require_relative('../models/analysis.rb')
 
 # Index
 get '/transactions' do
   @transactions = Transaction.all()
+  @analysis = Analysis.new
   erb(:'transactions/index')
 end
 
@@ -22,5 +24,7 @@ end
 
 # Show
 get '/transactions/:id' do
+  @transaction = Transaction.find(params['id'].to_i)
+  erb(:'transactions/show')
 
 end

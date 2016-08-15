@@ -12,6 +12,7 @@ class Transaction
     # find transaction by id
     sql = "SELECT * FROM transactions WHERE id = #{id};"
     transaction = SqlRunner.run(sql).first
+    return result = Transaction.new(transaction)
   end
 
   def self.find_by_tag(tag)
