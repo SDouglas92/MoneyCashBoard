@@ -32,7 +32,7 @@ class Merchant
 
   def transactions()
     # Gets all transactions related to merchant
-    sql = "SELECT * FROM transactions WHERE id = merchant_id;"
+    sql = "SELECT * FROM transactions WHERE #{@id} = merchant_id;"
     transactions = SqlRunner.run(sql)
     return result = transactions.map {|transaction| Transaction.new(transaction)}
   end

@@ -26,6 +26,7 @@ class Analysis
     for transaction in transactions
       total += transaction.amount
     end
+    binding.pry
     return total
 
   end
