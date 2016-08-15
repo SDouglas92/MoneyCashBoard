@@ -15,7 +15,9 @@ end
 
 # Create
 post '/merchants' do
-
+  @merchant = Merchant.new(params)
+  @merchant.save()
+  erb(:'merchants/create')
 end
 
 # Show
