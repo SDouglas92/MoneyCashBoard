@@ -6,13 +6,13 @@ class Analysis
 
   attr_reader(:transactions, :merchants)
 
-  def intialize(trans, merchs)
+  def initialize(trans, merchs)
     @transactions = trans
     @merchants = merchs   
   end
 
-  def total()
-    binding.pry
+  def total_all_transactions()
+    # binding.pry
     total = 0
     for transaction in @transactions
       total += transaction.amount
@@ -20,9 +20,6 @@ class Analysis
     return total
   end
 
-  def test_total_by_tag()
-
-  end
 
 
 end
