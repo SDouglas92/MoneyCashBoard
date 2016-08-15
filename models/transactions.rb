@@ -33,14 +33,14 @@ class Transaction
 
   def save
     # Saves instance to database
-    sql = "INSERT INTO transactions (amount, merchant_id) VALUES ('#{@amount}', '#{@merchant_id}') RETURNING *"
+    sql = "INSERT INTO transactions (amount, merchant_id, tag) VALUES ('#{@amount}', '#{@merchant_id}', #{@tag}) RETURNING *"
     trans = SqlRunner.run(sql).first
     @id = trans['id']
   end
 
   def merchants
     # Gets name of merchant related to transaction
-    sql = "SELECT name FROM merchants WHERE merchant_id = id;"
+    sql = "SELECT name FROM merchants WHERE #{@merchant_id} = id;"
     return name = SqlRunner.run(sql).first
   end
 
