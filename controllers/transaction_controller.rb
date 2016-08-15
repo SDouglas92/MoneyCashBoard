@@ -1,4 +1,5 @@
 require_relative('../models/transactions.rb')
+require_relative('../models/merchant.rb')
 
 # Index
 get '/transactions' do
@@ -8,6 +9,7 @@ end
 
 # New
 get '/transactions/new' do
+  @merchants = Merchant.all
   erb(:'transactions/new')
 end
 
