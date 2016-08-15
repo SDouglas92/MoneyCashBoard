@@ -26,5 +26,17 @@ end
 get '/transactions/:id' do
   @transaction = Transaction.find(params['id'].to_i)
   erb(:'transactions/show')
+end
 
+# New - tag
+# Gets user to input tag the want to search for
+get '/transactions/tag/new' do
+  erb(:'transactions/tag')
+end
+
+# Create - tag
+# Shows results based on the tag the user has searched
+post '/transactions/tag' do
+
+  erb(:'transactions/index')
 end
