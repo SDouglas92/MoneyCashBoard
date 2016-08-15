@@ -12,3 +12,7 @@
   <a href="/transactions/<%= transaction.id%>">View</a>
   <hr>
 <% end %>
+
+<b>Total spent on <%= params['tag'] %>:</b>
+
+<%= @analysis.total_by_transactions(@transactions)  %>

@@ -21,9 +21,8 @@ class Analysis
     return total
   end
 
-  def total_by_merchant(merchant)
+  def total_by_transactions(transactions)
     # calculates cost of selected merchants transactions
-    transactions = merchant.transactions
     total = 0
     for transaction in transactions
       total += transaction.amount
