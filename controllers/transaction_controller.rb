@@ -37,6 +37,6 @@ end
 # Create - tag
 # Shows results based on the tag the user has searched
 post '/transactions/tag' do
-
-  erb(:'transactions/index')
+  @transactions = Transaction.find_by_tag(params['tag'])
+  erb(:'transactions/tag_index')
 end

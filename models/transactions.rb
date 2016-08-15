@@ -17,7 +17,7 @@ class Transaction
 
   def self.find_by_tag(tag)
     # find transaction by tag 
-    sql = "SELECT * FROM transaction WHERE tag = '#{tag}';"
+    sql = "SELECT * FROM transactions WHERE tag = '#{tag}';"
     transactions = SqlRunner.run(sql)
     return result =  transactions.map {|transaction| Transaction.new(transaction)}
   end
