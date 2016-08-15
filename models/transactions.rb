@@ -17,24 +17,24 @@ class Transaction
 
   def self.find_by_tag(tag)
     # find transaction by tag 
-    sql = "SELECT * FROM transactions WHERE tag = '#{tag}';"
+    sql = "SELECT * FROM transactions WHERE tag_id = #{tag};"
     transactions = SqlRunner.run(sql)
     return result =  transactions.map {|transaction| Transaction.new(transaction)}
   end
 
-  attr_reader(:id, :amount, :merchant_id, :tag)
+  attr_reader(:id, :amount, :merchant_id, :tag_id)
 
   def initialize(options)
     # Creates new instances of transactions, takes in hash of options
     @id = options['id'].to_i
     @amount = options['amount'].to_f
     @merchant_id = options['merchant_id'].to_i
-    @tag = options['tag']
+    @tag_id = options['tag_id'].to_i
   end 
 
   def save
     # Saves instance to database
-    sql = "INSERT INTO transactions (amount, merchant_id, tag) VALUES ('#{@amount.to_f}', '#{@merchant_id}', '#{@tag}') RETURNING *"
+    sql = "INSERT INTO transactions (amount, merchant_id, tag_id) VALUES ('#{@amount.to_f}', '#{@merchant_id}', #{@tag_id}) RETURNING *"
     trans = SqlRunner.run(sql).first
     @id = trans['id']
   end
@@ -42,6 +42,11 @@ class Transaction
   def merchants
     # Gets name of merchant related to transaction
     sql = "SELECT name FROM merchants WHERE #{@merchant_id} = id;"
+    return name = SqlRunner.run(sql).first
+  end
+
+  def tag
+    sql = "SELECT name FROM tags WHERE #{@tag_id} = id;"
     return name = SqlRunner.run(sql).first
   end
 

@@ -9,7 +9,7 @@
   <b>Amount:</b>
   <p><%= transaction.amount %></p>
   <b>Tag:</b>
-  <p><%= transaction.tag %></p>
+  <p><%= transaction.tag['name'] %></p>
   <a href="/transactions/<%= transaction.id%>">View</a>
   <hr>
 <% end %>
