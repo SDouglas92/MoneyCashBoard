@@ -1,4 +1,5 @@
 <h1>Transactions</h1>
+<a href="/transactions">Return to all transactions</a>
 
 <hr>
 
@@ -16,3 +17,5 @@
 <b>Total spent on <%= params['tag'] %>:</b>
 
 <%= @analysis.total_by_transactions(@transactions)  %>
+
+<p><a href="/transactions/tag/new">Search again</a></p>
