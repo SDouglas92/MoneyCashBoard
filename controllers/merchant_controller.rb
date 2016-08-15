@@ -23,5 +23,6 @@ end
 # Show
 get '/merchants/:id' do
   @merchant = Merchant.find(params['id'])
+  @analysis = Analysis.new()
   erb(:'merchants/show')
 end

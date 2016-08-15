@@ -4,8 +4,10 @@
   <% trans = @merchant.transactions %>
   <% for tran in trans %>
     <p>Amount: <%= tran.amount %></p>
-    <p>on <%= tran.tag %></p>
+    <p>on <%= tran.tag['name'] %></p>
     <p><a href="/transactions/<%=tran.id%>">View Transaction</a></p>
     <hr>
   <% end %>
+  
+  <b>Total Spent at <%= @merchant.name %>: £<%= @analysis.total_by_transactions(trans) %></b>
   
