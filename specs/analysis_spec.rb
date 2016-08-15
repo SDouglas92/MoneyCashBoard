@@ -20,9 +20,6 @@ class AnalysisTest < MiniTest::Test
     @transaction1.save()
     @transaction2.save()
 
-    # trans = [@transaction1, @transaction2]
-    # merchs = [@merchant1, @merchant2]
-
     @analysis = Analysis.new()
 
   end
