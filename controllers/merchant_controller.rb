@@ -41,5 +41,6 @@ end
 
 # Delete
 post '/merchants/:id/delete' do
+  Merchant.delete(params['id'])
   redirect(to("/merchants"))
 end

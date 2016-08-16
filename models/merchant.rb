@@ -23,6 +23,11 @@ class Merchant
     SqlRunner.run(sql)
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM merchants WHERE id = #{id}"
+    SqlRunner.run(sql)
+  end
+
   attr_reader(:id, :name)
 
   def initialize(options)
