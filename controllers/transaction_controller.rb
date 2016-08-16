@@ -32,6 +32,21 @@ get '/transactions/:id' do
   erb(:'transactions/show')
 end
 
+# Edit 
+get '/transactions/:id/edit' do
+
+end
+# Update
+post '/transactions/:id' do
+
+end
+
+# Destroy
+post '/transactions/:id/delete' do
+
+end
+
+
 # New - tag
 # Gets user to input tag the want to search for
 get '/transactions/tag/new' do
