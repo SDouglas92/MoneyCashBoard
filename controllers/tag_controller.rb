@@ -45,7 +45,8 @@ end
 
 # Delete
 post '/tags/:id/delete' do
-
+  Tag.delete(params[:id])
+  redirect(to("/tags"))
 end
 
 

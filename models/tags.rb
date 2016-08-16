@@ -19,6 +19,11 @@ class Tag
     SqlRunner.run(sql)
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM tags WHERE id = #{id};"
+    SqlRunner.run(sql)
+  end
+
   attr_reader(:id, :name)
 
   def initialize(options)
