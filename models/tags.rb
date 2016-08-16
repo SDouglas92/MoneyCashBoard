@@ -32,10 +32,12 @@ class Tag
   end
 
   def save
-    sql = "INSERT INTO tags (name) VALUES '#{@name}' RETURNING *;"
+    sql = "INSERT INTO tags (name) VALUES ('#{@name}') RETURNING *;"
     tag =  SqlRunner.run(sql).first
     return @id = tag['id']
   end
+
+  
 
 
 end

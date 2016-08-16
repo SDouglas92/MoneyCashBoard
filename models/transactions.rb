@@ -26,7 +26,7 @@ class Transaction
 
   def self.update(options)
     sql = "Update transactions SET 
-            amount = #{options['amount'].to_i},
+            amount = #{options['amount'].to_f},
             merchant_id = #{options['merchant_id'].to_i},
             tag_id = #{options['tag_id'].to_i} 
             WHERE id = #{options['id'].to_i}"

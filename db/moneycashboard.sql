@@ -26,11 +26,11 @@ CREATE TABLE accounts(
   balance INT2
 );
 
-INSERT INTO tags (name) VALUES ('Food');
-INSERT INTO tags (name) VALUES ('Fuel');
-INSERT INTO tags (name) VALUES ('Games');
+-- INSERT INTO tags (name) VALUES ('Food');
+-- INSERT INTO tags (name) VALUES ('Fuel');
+-- INSERT INTO tags (name) VALUES ('Games');
 
-INSERT INTO merchants (name) VALUES ('Tesco');
-INSERT INTO merchants (name) VALUES ('Asda');
-INSERT INTO merchants (name) VALUES ('lidl');
+-- INSERT INTO merchants (name) VALUES ('Tesco');
+-- INSERT INTO merchants (name) VALUES ('Asda');
+-- INSERT INTO merchants (name) VALUES ('lidl');
 
