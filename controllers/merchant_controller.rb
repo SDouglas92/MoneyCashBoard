@@ -26,3 +26,18 @@ get '/merchants/:id' do
   @analysis = Analysis.new()
   erb(:'merchants/show')
 end
+
+# Edit
+get '/merchants/:id/edit' do
+  erb(:'merchants/edit')
+end
+
+# Update
+post '/merchants/:id' do
+  redirect(to("/merchants/:id"))
+end
+
+# Delete
+post '/merchants/:id/delete' do
+  redirect(to("/merchants"))
+end
