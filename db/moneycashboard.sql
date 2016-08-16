@@ -16,7 +16,7 @@ CREATE TABLE transactions(
   id SERIAL8 PRIMARY KEY,
   amount FLOAT,
   merchant_id INT8 REFERENCES merchants(id) ON DELETE CASCADE,
-  tag_id INT8 REFERENCES tags(id)
+  tag_id INT8 REFERENCES tags(id) ON DELETE CASCADE
 );
 
 INSERT INTO tags (name) VALUES ('Food');
