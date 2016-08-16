@@ -36,7 +36,7 @@ end
 # Update
 post '/merchants/:id' do
   Merchant.update(params)
-  redirect(to("/merchants/:id"))
+  redirect(to("/merchants/#{params[:id]}"))
 end
 
 # Delete

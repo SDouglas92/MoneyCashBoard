@@ -10,4 +10,6 @@
   <% end %>
   
   <b>Total Spent at <%= @merchant.name %>: £<%= @analysis.total_by_transactions(trans) %></b>
+
+  <a href="/merchants/<%=@merchant.id%>/edit">Edit</a>
   
