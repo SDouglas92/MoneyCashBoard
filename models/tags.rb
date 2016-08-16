@@ -8,6 +8,17 @@ class Tag
     return result = tags.map {|tag| Tag.new(tag)}
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM tags WHERE id = #{id};"
+    tag = SqlRunner.run(sql).first
+    return result = Tag.new(tag)
+  end
+
+  def self.update(options)
+    sql = "UPDATE tags SET name = '#{options['name']}' WHERE id = #{options['id']}"
+    SqlRunner.run(sql)
+  end
+
   attr_reader(:id, :name)
 
   def initialize(options)
@@ -20,5 +31,6 @@ class Tag
     tag =  SqlRunner.run(sql).first
     return @id = tag['id']
   end
+
 
 end

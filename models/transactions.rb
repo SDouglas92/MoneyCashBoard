@@ -19,7 +19,7 @@ class Transaction
   def self.find_by_tag(tag)
     # find transaction by tag 
     sql = "SELECT * FROM transactions WHERE tag_id = #{tag};"
-    binding.pry
+    # binding.pry
     transactions = SqlRunner.run(sql)
     return result =  transactions.map {|transaction| Transaction.new(transaction)}
   end
