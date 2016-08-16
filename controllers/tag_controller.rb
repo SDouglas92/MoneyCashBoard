@@ -23,9 +23,9 @@ get '/tags' do
 end
 
 # Show
-
 get '/tags/:id' do
   @transactions = Transaction.find_by_tag(params['id'])
+  @tag = Tag.find(params['id'])
   @analysis = Analysis.new()
    erb(:'tags/show')
 end
@@ -35,7 +35,6 @@ get '/tags/:id/edit' do
   @tag = Tag.find(params['id'])
   erb(:'tags/edit')
 end
-
 
 # Update
 post '/tags/:id' do
@@ -50,18 +49,3 @@ post '/tags/:id/delete' do
 end
 
 
-# New search- tag (index)
-# Gets user to input tag the want to search for
-get '/transactions/tag/new' do
-  @tags = Tag.all()
-  erb(:'tags/new_search')
-end
-
-# Create search - tag (show)
-# Shows results based on the tag the user has searched
-post '/transactions/tag' do
-  binding.pry
-  @transactions = Transaction.find_by_tag(params['tag_id'])
-  @analysis = Analysis.new()
-   erb(:'tags/index_search')
-end
