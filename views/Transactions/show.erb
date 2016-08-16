@@ -10,4 +10,7 @@
 
 <a href="/merchants/<%= @transaction.merchant_id%>">Go To Merchant</a>
 <a href="/transactions/<%= @transaction.id%>/edit ">Edit</a>
+<form action="/transactions/<%= @transaction.id %>/delete" method="post">
+  <input type="submit" value="Delete">
+</form>
 
