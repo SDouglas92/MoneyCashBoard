@@ -34,16 +34,17 @@ end
 
 # Edit 
 get '/transactions/:id/edit' do
-
+  @transaction = Transaction.find(params['id'].to_i)
+  erb(:'transactions/edit')
 end
 # Update
 post '/transactions/:id' do
-
+  redirect(to("/transactions/#{params[:id]}"))
 end
 
 # Destroy
 post '/transactions/:id/delete' do
-
+  redirect(to('/transactions'))
 end
 
 

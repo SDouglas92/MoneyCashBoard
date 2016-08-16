@@ -22,6 +22,15 @@ class Transaction
     return result =  transactions.map {|transaction| Transaction.new(transaction)}
   end
 
+  def self.update(options)
+    sql = "Update transactions SET 
+            amount = #{options['amount'].to_i},
+            merchant_id = #{options['merchant_id'].to_i},
+            tag_id = #{options['tag_id'].to_i} 
+            WHERE id == #{options['id'].to_i}"
+    SqlRunner.run(sql)
+  end
+
   attr_reader(:id, :amount, :merchant_id, :tag_id)
 
   def initialize(options)
@@ -38,6 +47,7 @@ class Transaction
     trans = SqlRunner.run(sql).first
     @id = trans['id']
   end
+
 
   def merchants
     # Gets name of merchant related to transaction
