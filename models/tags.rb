@@ -1,4 +1,5 @@
 require_relative('../db/SqlRunner.rb')
+require_relative('../models/transactions.rb')
 
 class Tag
 
@@ -35,6 +36,12 @@ class Tag
     sql = "INSERT INTO tags (name) VALUES ('#{@name}') RETURNING *;"
     tag =  SqlRunner.run(sql).first
     return @id = tag['id']
+  end
+
+  def transactions
+    sql = "SELECT * FROM transactions WHERE tag_id = #{@id};"
+    transactions = SqlRunner.run(sql)
+    return results = transactions.map {|transaction| Transaction.new(transaction)}
   end
 
   

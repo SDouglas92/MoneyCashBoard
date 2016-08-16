@@ -1,0 +1,8 @@
+<h1>Update Balance</h1>
+
+<form action="/accounts" method="post">
+  <label name="balance">Balance:</label>
+  <input type="number" name="balance" value="<%= @account.balance %>">
+
+  <input type="submit" value="Update Balance">
+</form>

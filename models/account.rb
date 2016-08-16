@@ -8,6 +8,11 @@ class Account
     return result = accounts.map {|account| Account.new(account)}
   end
 
+  def self.update(options)
+    sql = "UPDATE accounts SET balance = #{options['balance']} WHERE id = 1;"
+    SqlRunner.run(sql)
+  end
+
   attr_reader(:id, :name, :balance)
 
   def initialize(options)
