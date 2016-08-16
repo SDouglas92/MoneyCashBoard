@@ -27,7 +27,7 @@ class Transaction
             amount = #{options['amount'].to_i},
             merchant_id = #{options['merchant_id'].to_i},
             tag_id = #{options['tag_id'].to_i} 
-            WHERE id == #{options['id'].to_i}"
+            WHERE id = #{options['id'].to_i}"
     SqlRunner.run(sql)
   end
 

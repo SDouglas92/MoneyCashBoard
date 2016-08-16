@@ -35,15 +35,19 @@ end
 # Edit 
 get '/transactions/:id/edit' do
   @transaction = Transaction.find(params['id'].to_i)
+  @merchants = Merchant.all
+  @tags = Tag.all
   erb(:'transactions/edit')
 end
 # Update
 post '/transactions/:id' do
+  Transaction.update(params)
   redirect(to("/transactions/#{params[:id]}"))
 end
 
 # Destroy
 post '/transactions/:id/delete' do
+  Transaction.delete(params[:id])
   redirect(to('/transactions'))
 end
 
