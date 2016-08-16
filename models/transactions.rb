@@ -31,6 +31,11 @@ class Transaction
     SqlRunner.run(sql)
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM transactions WHERE id = #{id}"
+    SqlRunner.run(sql)
+  end
+
   attr_reader(:id, :amount, :merchant_id, :tag_id)
 
   def initialize(options)
