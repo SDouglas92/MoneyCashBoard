@@ -14,7 +14,7 @@
   <% for transaction in @transactions  %>
     <tr>
       <td><%= transaction.merchants['name'] %></td>
-      <td><%= transaction.amount %></td>
+      <td>£<%= "%.2f" %transaction.amount %></td>
       <td><%= transaction.tag['name'] %></td>
       <td><a href="/transactions/<%= transaction.id%>">View</a></td>
     </tr>
