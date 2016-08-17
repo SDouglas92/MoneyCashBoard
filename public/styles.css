@@ -1,0 +1,133 @@
+body{
+  margin: 0;
+  background-color: #EBF3FA;
+  color: #638BAC;
+
+}
+
+header {
+  background-color: #92B3CE;
+  margin-top: 0;
+  height: 100px;
+  border-bottom-color: grey;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+footer {
+  position: relative;
+  top: 20px;
+  background-color: #92B3CE;
+  margin-bottom: 0;
+  bottom: 0;
+  border-top-color: grey;
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+a {
+  color: #C1D7E8; 
+  text-decoration: none;
+}
+
+a:hover {
+  color: #638BAC;
+
+}
+
+table {
+  margin: auto;
+  width: 80%;
+  border-style: solid;
+  border-color: #406B90;
+  border-width: 1px;
+  border-collapse: collapse;
+}
+
+td {
+  text-align: center;
+  border-style: solid;
+  border-color: #406B90;
+  border-width: 1px;
+  border-collapse: collapse;
+}
+
+b {
+  position: relative;
+  top: 15px;
+  margin: 10px;
+}
+
+
+h1 {
+  position: relative;
+  margin: 10px;
+}
+
+/*Header*/
+.headertitle{
+  margin:0;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.headerdiv {
+  position: absolute;
+  margin: 10px;
+  top: 0;
+  right: 20px;
+  font-size: 20px;
+}
+
+/*Home Page*/
+.mainpageheading {
+  text-align: center;
+}
+
+.mainpagetext {
+  position: relative;
+  text-align: center;
+  margin: 15px;
+}
+
+/*Transactions Index*/
+.createtransactionlink {
+  position: relative;
+  margin: 10px;
+  top: 20px;
+}
+.transactionsheader {
+  position: relative;
+  top:5px;
+  left:10px;
+}
+
+.showtext {
+  margin-left: 10px;
+}
+
+.showdiv {
+  margin-left: 10px;
+}
+
+.editform {
+  position: relative;
+  top: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+/*Tags*/
+.tagshowtext {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+/*Account update*/
+.accountupdateform {
+  margin: 10px;
+}
+
+.shiftmerchanttable {
+  margin-top: 20px;
+}

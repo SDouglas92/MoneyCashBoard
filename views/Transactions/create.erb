@@ -1,11 +1,7 @@
 <b>You've successfully created a new transaction</b>
-<hr>
 
-<b>You spent <%= @transaction.amount %></b>
-<b>in</b>
-<b><%= @transaction.merchants['name'] %></b>
-<b>on</b>
-<b><%= @transaction.tag['name'] %></b>
 
-<hr>
-<a href="/transactions">Return to all Transactions</a>
+<p><b>You spent £<%= @transaction.amount %> in <%= @transaction.merchants['name'] %> on <%= @transaction.tag['name'] %></b></p>
+
+
+<p class="createtransactionlink"><a href="/transactions">Return to all Transactions</a></p>

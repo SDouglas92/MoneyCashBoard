@@ -1,19 +1,26 @@
-<h1>Transactions</h1>
-<p><a href="/transactions/new">Create New Transaction</a></p>
-<p><a href="/tags">Search By Tag</a></p>
+<h1 class="headertitle">Transactions</h1>
+<div class="transactionsheader"><p><a href="/transactions/new">Create New Transaction</a>       <a href="/tags">Search By Tag</a></p></div>
 
 <hr>
 
-<% for transaction in @transactions  %>
-  <b>Merchant Name: </b>
-  <p><%= transaction.merchants['name'] %></p>
-  <b>Amount:</b>
-  <p><%= transaction.amount %></p>
-  <b>Tag:</b>
-  <p><%= transaction.tag['name'] %></p>
-  <a href="/transactions/<%= transaction.id%>">View</a>
-  <hr>
-<% end %>
+<table>
+  <tr>
+    <th>Merchant Name</th>
+    <th>Amount</th>
+    <th>Tag</th>
+    <th></th>
+  </tr>
 
-<b>Current Total:</b>
-<p>£<%= @analysis.total_all_transactions() %></p>
+  <% for transaction in @transactions  %>
+    <tr>
+      <td><%= transaction.merchants['name'] %></td>
+      <td><%= transaction.amount %></td>
+      <td><%= transaction.tag['name'] %></td>
+      <td><a href="/transactions/<%= transaction.id%>">View</a></td>
+    </tr>
+  <% end %>
+
+</table>
+
+<hr>
+<b>Current Total: £<%= @analysis.total_all_transactions() %></b>

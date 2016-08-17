@@ -1,25 +1,29 @@
 <h1>Transactions for <%= @tag.name %></h1>
-<a href="/transactions">Return to all transactions</a>
+<a href="/transactions" class="showtext">Return to all transactions</a>
 
 <hr>
+<table>
+  <tr>
+    <th>Merchant Name</th>
+    <th>Amount</th>
+    <th></th>
+  </tr>
 
-<% for transaction in @transactions  %>
-  <b>Merchant Name: </b>
-  <p><%= transaction.merchants['name'] %></p>
-  <b>Amount:</b>
-  <p><%= transaction.amount %></p>
-  <b>Tag:</b>
-  <p><%= transaction.tag['name'] %></p>
-  <a href="/transactions/<%= transaction.id%>">View</a>
-  <hr>
-<% end %>
+    <% for transaction in @transactions  %>
+      <tr>
+        <td><%= transaction.merchants['name'] %></td>
+        <td><%= transaction.amount %></td>
+        <td><a href="/transactions/<%= transaction.id%>">View</a></td>
+      </tr>
+    <% end %>
+</table>
 
-<b>Total spent on <%= @tag.name %>:</b>
+<b>Total spent on <%= @tag.name %>: £<%= @analysis.total_by_transactions(@transactions)  %></b>
 
-<%= @analysis.total_by_transactions(@transactions)  %>
 
-<p><a href="/tags">Search again</a></p>
-<p><a href="/tags/<%= params['id'] %>/edit">Edit Tag</a></p>
-<form action="/tags/<%= params['id'] %>/delete" method="post">
+
+<p class="tagshowtext"><a href="/tags">Search again</a></p>
+<p class="showtext"><a href="/tags/<%= params['id'] %>/edit">Edit Tag</a></p>
+<form action="/tags/<%= params['id'] %>/delete" method="post" class="showtext">
   <input type="submit" value="Delete">
 </form>

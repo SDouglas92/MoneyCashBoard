@@ -10,6 +10,6 @@ end
 #update
 post '/accounts' do
   Account.update(params)
-  redirect(to('/'))
+  redirect(to('/analysis/all'))
 end
 

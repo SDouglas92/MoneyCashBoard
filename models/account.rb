@@ -18,7 +18,7 @@ class Account
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
-    @balance = options['balance'].to_i
+    @balance = options['balance'].to_f
   end
 
   def save

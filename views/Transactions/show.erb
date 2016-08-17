@@ -1,16 +1,19 @@
 <b>Transaction</b>
-<hr>
 
+<p></p>
 <b>Merchant Name:</b>
-<p><%= @transaction.merchants['name'] %></p>
+<p class="showtext"><%= @transaction.merchants['name'] %></p>
 <b>Tag:</b>
-<p><%= @transaction.tag['name'] %></p>
+<p class="showtext"><%= @transaction.tag['name'] %></p>
 <b>Amount:</b>
-<p><%= @transaction.amount %></p>
+<p class="showtext"><%= @transaction.amount %></p>
 
-<a href="/merchants/<%= @transaction.merchant_id%>">Go To Merchant</a>
-<a href="/transactions/<%= @transaction.id%>/edit ">Edit</a>
+<div class="showdiv">
+<p><a href="/merchants/<%= @transaction.merchant_id%>">Go To Merchant</a>
+<a href="/transactions/<%= @transaction.id%>/edit ">Edit</a></p>
 <form action="/transactions/<%= @transaction.id %>/delete" method="post">
   <input type="submit" value="Delete">
 </form>
+
+</div>
 

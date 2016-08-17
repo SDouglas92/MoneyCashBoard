@@ -1,7 +1,7 @@
 <b>Edit Transaction</b>
-<hr>
 
-<form action="/transactions/<%= @transaction.id %>" method="post">
+
+<form action="/transactions/<%= @transaction.id %>" method="post" class="editform">
   <label for="amount">Amount:</label>
   <input type="float(2)" name="amount" value="<%= @transaction.amount %>">
 
@@ -25,4 +25,3 @@
 
 </form>
 
-<hr>
