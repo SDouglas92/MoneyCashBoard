@@ -14,7 +14,7 @@
     </tr>
   <% for tran in trans %>
     <tr>
-      <td><%= "%.2f" % tran.amount %></td>
+      <td>£<%= "%.2f" % tran.amount %></td>
       <td><%= tran.tag['name'] %></td>
       <td><a href="/transactions/<%=tran.id%>">View Transaction</a></td>
     </tr>

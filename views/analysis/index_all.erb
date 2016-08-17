@@ -27,7 +27,7 @@
   <tr>
    <td><%= tag.name %></td>
     <% transactions = tag.transactions() %>
-    <td><%= "%.2f" % @analysis.total_by_transactions(transactions).round(2) %></td>
+    <td> £<%= "%.2f" % @analysis.total_by_transactions(transactions).round(2) %></td>
     <td><%= @analysis.tag_as_percentage(@account, tag.id).round(2) %>%</td>
   </tr>
 <% end %>
