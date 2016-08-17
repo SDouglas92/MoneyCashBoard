@@ -1,12 +1,12 @@
 <h1>Analysis of budget</h1>
 
 <b>Current Balance</b>
-<p class="showtext">£ <%= @account.balance %></p>
+<p class="showtext">£ <%= "%.2f" % @account.balance %></p>
 <p class="showtext"><a href="/accounts">Update Balance</a></p>
 <b>Total of all Transactions:</b>
-<p class="showtext">£<%= @analysis.total_all_transactions().round(2) %></p>
+<p class="showtext">£<%= "%.2f" % @analysis.total_all_transactions().round(2) %></p>
 <b>Remaining Budget</b>
-<p class="showtext">£<%= (@account.balance - @analysis.total_all_transactions()).round(2) %></p>
+<p class="showtext">£<%= "%.2f" % (@account.balance - @analysis.total_all_transactions()).round(2) %></p>
 
 <b>Percentage of budget spent:</b>
 <p class="showtext"><%= @analysis.total_percentage(@account).round(2) %>%</p>
@@ -27,7 +27,7 @@
   <tr>
    <td><%= tag.name %></td>
     <% transactions = tag.transactions() %>
-    <td><%= @analysis.total_by_transactions(transactions).round(2) %></td>
+    <td><%= "%.2f" % @analysis.total_by_transactions(transactions).round(2) %></td>
     <td><%= @analysis.tag_as_percentage(@account, tag.id).round(2) %>%</td>
   </tr>
 <% end %>

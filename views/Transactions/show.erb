@@ -6,7 +6,7 @@
 <b>Tag:</b>
 <p class="showtext"><%= @transaction.tag['name'] %></p>
 <b>Amount:</b>
-<p class="showtext"><%= @transaction.amount %></p>
+<p class="showtext"><%= "%.2f" % @transaction.amount %></p>
 
 <div class="showdiv">
 <p><a href="/merchants/<%= @transaction.merchant_id%>">Go To Merchant</a>

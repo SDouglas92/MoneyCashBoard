@@ -23,4 +23,4 @@
 </table>
 
 <hr>
-<b>Current Total: £<%= @analysis.total_all_transactions() %></b>
+<b>Current Total: £<%= "%.2f" % @analysis.total_all_transactions().round(2) %></b>
