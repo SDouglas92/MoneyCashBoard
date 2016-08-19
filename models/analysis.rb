@@ -49,6 +49,7 @@ class Analysis
     total = total_by_transactions(transactions)
     balance = account.balance
     percentage = (total/balance) * 100
+    return percentage.round(2)
   end
 
 

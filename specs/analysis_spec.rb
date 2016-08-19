@@ -14,25 +14,25 @@ class AnalysisTest < MiniTest::Test
   end
 
   def test_total_amount_spent
-    assert_equal(70, @analysis.total_all_transactions())
+    assert_equal(151.68, @analysis.total_all_transactions())
   end
 
   def test_total_by_trasnaction
     @merchant1 = Merchant.find(1)
     transactions = @merchant1.transactions
-    assert_equal(10, @analysis.total_by_transactions(transactions))
+    assert_equal(15.99, @analysis.total_by_transactions(transactions))
   end
 
   def test_total_transactions_as_percentage
     accounts = Account.all
     @account = accounts.first
-    assert_equal(70, @analysis.total_percentage(@account))
+    assert_equal(75.84, @analysis.total_percentage(@account))
   end
 
   def test_tag_as_percentage
     accounts = Account.all
     @account = accounts.first
-    assert_equal(10, @analysis.tag_as_percentage(@account, 1))
+    assert_equal(8, @analysis.tag_as_percentage(@account, 1))
   end
 
 
